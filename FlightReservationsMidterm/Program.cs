@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Diagnostics.Metrics;
+using System.Numerics;
 using static System.Console;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace FlightReservationsMidterm
 {
@@ -7,36 +11,42 @@ namespace FlightReservationsMidterm
     {
         static void Main(string[] args)
         {
-            
-            
+
+            //Greeting - Introduce Airline
             WriteLine("Welcome to Reynolds Airlines Booking Service.");
 
+            //Prompt and Accempt User's Name
             WriteLine("To begin your booking, please enter your name: ");
             string userName = ReadLine();
-
             WriteLine($"\nHello, {userName}. Let's get started with your booking.");
+
+            //Prompt and Accept User's Address
             WriteLine("Please enter your address so we can select the nearest airport to you: ");
             string userAddress = ReadLine();
+            WriteLine($"\nThank you for entering your address, {userName}.");
 
-            WriteLine($"\nThank you, {userName}. Please enter your date of travel in mm/dd/yyyy format");
+            //Prompt and Accept User's Date of Travel
+            WriteLine("Please enter your date of travel in mm/dd/yyyy format");
             string travelDate = ReadLine();
+            WriteLine("Thank you for entering your booking identification information.");
 
-            WriteLine($"Thank you for entering your travel information, {userName}.");
+            //Ask User How Many Seats They want to Book, Calculate Seat Price
             WriteLine("Please enter the number of seats you would like to book: ");
             int seatCount = int.Parse(ReadLine());
-
-            WriteLine($"You have selected to book {seatCount} seats.");
-            WriteLine("Please enter the total number of bags you will be checking: \n(enter 0 if you will not be checking any bags)");
-            int bagCount = int.Parse(ReadLine());
-
             double seatPrice = seatDataCalculator(seatCount);
 
+            WriteLine($"You have selected to book {seatCount} seats.");
+
+            //Ask User How Many Bags They want to Check, Calculate Bag Price
+            WriteLine("Please enter the total number of bags you will be checking: \n(enter 0 if you will not be checking any bags)");
+            int bagCount = int.Parse(ReadLine());
             double bagPrice = bagDataCalculator(bagCount);
 
+            //Calculate Sales Tax and Total Price
             double salesTax = (bagPrice * seatPrice) * 0.05;
-
             double totalPrice = seatPrice + bagPrice + salesTax;
-           
+
+            //Change Colors and Display Receipt
             ForegroundColor = ConsoleColor.Yellow;
             BackgroundColor = ConsoleColor.DarkRed;
 
@@ -106,7 +116,7 @@ namespace FlightReservationsMidterm
             }
             else if (seatCount == 0)
             {
-                WriteLine("You have selected to book 0 seats. There is no charge for this service.");
+                WriteLine("You have selected to book 0 seats. You will not be charged.");
             }
             else if (seatCount >= 1000)
             {
