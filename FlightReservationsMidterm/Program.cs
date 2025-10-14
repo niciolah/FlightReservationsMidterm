@@ -33,24 +33,30 @@ namespace FlightReservationsMidterm
 
             double bagPrice = bagDataCalculator(bagCount);
 
-            WriteLine("your seat price is $" + seatPrice);  
-            WriteLine("your bag price is $" + bagPrice);
+            double salesTax = (bagPrice * seatPrice) * 0.05;
 
+            double totalPrice = seatPrice + bagPrice + salesTax;
 
-            WriteLine("\n===================================================================================");
-            WriteLine("\t\t\tREYNOLDS AIRLINES");
-            WriteLine("\t\t\t FLIGHT ITINERARY");
-            WriteLine("\t\t\t ITEMIZED RECEIPT");
+            WriteLine("\n|===================================================================================|");
+            WriteLine("|\t\t\tREYNOLDS AIRLINES\t\t\t\t\t\t|");
+            WriteLine("|\t\t\t FLIGHT ITINERARY\t\t\t\t\t\t|");
+            WriteLine("|\t\t\t ITEMIZED RECEIPT\t\t\t\t\t\t|");
             WriteLine("===================================================================================");
-            WriteLine($"Passenger Name: {userName}");
-            WriteLine($"Passenger Address: {userAddress}");
-            WriteLine($"Date of Travel: {travelDate}");
-            WriteLine($"Number of Seats Booked: {seatCount} \t\t\tTotal Seat Price: {seatPrice.ToString("C")}");
-            WriteLine($"Number of Bags Checked: {bagCount} \t\t\tTotal Bag Price: {bagPrice.ToString("C")}");
-            WriteLine("-----------------------------------------------------------------------------------");
-            WriteLine($"\t\t\t  TOTAL AMOUNT DUE: ${seatPrice + bagPrice}");
-            WriteLine("===================================================================================");
-            WriteLine("\t\tThank you for flying Reynolds Airlines!");
+            WriteLine($"|Passenger Name:\t\t{userName}\t\t\t\t\t|");
+            WriteLine($"|Passenger Address:\t\t{userAddress}\t\t\t\t\t|");
+            WriteLine($"|Date of Travel:\t\t{travelDate}\t\t\t\t\t|");
+            WriteLine("|-----------------------------------------------------------------------------------|");
+            WriteLine($"|Number of Seats Booked:\t{seatCount}|");
+            WriteLine($"|Number of Bags Checked:\t{bagCount}|");
+            WriteLine($"|Total Seat Price:\t\t{seatPrice.ToString("C")}|");
+            WriteLine($"|Total Bag Price:\t\t{bagPrice.ToString("C")}|");
+            WriteLine($"|Sales Tax (5%):\t\t{(salesTax).ToString("C")}|");
+            WriteLine("|-----------------------------------------------------------------------------------|");
+            WriteLine($"|\t\t\t  TOTAL AMOUNT DUE: {totalPrice.ToString("C")}\t\t\t\t\t|");
+            WriteLine("|===================================================================================|");
+            WriteLine("|\t\tThank you for flying Reynolds Airlines!\t\t\t\t\t|");
+            WriteLine("|-----------------------------------------------------------------------------------|");
+
 
 
 
