@@ -13,12 +13,15 @@ namespace FlightReservationsMidterm
 
             WriteLine("To begin your booking, please enter your name: ");
             string userName = ReadLine();
-            WriteLine($"Hello, {userName}. Let's get started with your booking.");
+
+            WriteLine($"\nHello, {userName}. Let's get started with your booking.");
             WriteLine("Please enter your address so we can select the nearest airport to you: ");
             string userAddress = ReadLine();
-            WriteLine($"Thank you, {userName}. Please enter your date of travel");
+
+            WriteLine($"\nThank you, {userName}. Please enter your date of travel");
             string travelDate = ReadLine();
-            WriteLine($"Thank you for entering your travel inforamtion, {userName}.");
+
+            WriteLine($"Thank you for entering your travel information, {userName}.");
             WriteLine("Please enter the number of seats you would like to book: ");
             int seatCount = int.Parse(ReadLine());
 
@@ -32,6 +35,23 @@ namespace FlightReservationsMidterm
 
             WriteLine("your seat price is $" + seatPrice);  
             WriteLine("your bag price is $" + bagPrice);
+
+
+            WriteLine("\n===================================================================================");
+            WriteLine("\t\t\tREYNOLDS AIRLINES");
+            WriteLine("\t\t\t FLIGHT ITINERARY");
+            WriteLine("\t\t\t ITEMIZED RECEIPT");
+            WriteLine("===================================================================================");
+            WriteLine($"Passenger Name: {userName}");
+            WriteLine($"Passenger Address: {userAddress}");
+            WriteLine($"Date of Travel: {travelDate}");
+            WriteLine($"Number of Seats Booked: {seatCount} \t\t\tTotal Seat Price: ${seatPrice}");
+            WriteLine($"Number of Bags Checked: {bagCount} \t\t\tTotal Bag Price: ${bagPrice}");
+            WriteLine("-----------------------------------------------------------------------------------");
+            WriteLine($"\t\t\t  TOTAL AMOUNT DUE: ${seatPrice + bagPrice}");
+            WriteLine("===================================================================================");
+            WriteLine("\t\tThank you for flying Reynolds Airlines!");
+
 
 
         }
