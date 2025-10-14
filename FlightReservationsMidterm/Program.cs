@@ -35,8 +35,6 @@ namespace FlightReservationsMidterm
             int seatCount = int.Parse(ReadLine());
             double seatPrice = seatDataCalculator(seatCount);
 
-            WriteLine($"You have selected to book {seatCount} seats.");
-
             //Ask User How Many Bags They want to Check, Calculate Bag Price
             WriteLine("Please enter the total number of bags you will be checking: \n(enter 0 if you will not be checking any bags)");
             int bagCount = int.Parse(ReadLine());
@@ -55,6 +53,7 @@ namespace FlightReservationsMidterm
             WriteLine("|\t\t\t FLIGHT ITINERARY");
             WriteLine("|\t\t\t ITEMIZED RECEIPT");
             WriteLine("|===================================================================================");
+            WriteLine($"BOOKING IDENTIFICATION INFORMATION");
             WriteLine($"|Passenger Name:\t\t{userName}");
             WriteLine($"|Passenger Address:\t\t{userAddress}");
             WriteLine($"|Date of Travel:\t\t{travelDate}");
@@ -69,11 +68,13 @@ namespace FlightReservationsMidterm
             WriteLine("|===================================================================================");
             WriteLine("|\t\tThank you for flying Reynolds Airlines!");
             WriteLine("|-----------------------------------------------------------------------------------");
+            //Reset Console Colors so only the receipt is colored
             Console.ResetColor();
 
 
 
         }
+        //Method to Calculate Bag Price
         static double bagDataCalculator(int bagCount)
         {
             double bagsTotalPrice = 0.00;
@@ -101,6 +102,7 @@ namespace FlightReservationsMidterm
             }
                 return bagsTotalPrice;
         }
+        //Method to Calculate Seat Price
         static double seatDataCalculator(int seatCount)
         {
             int counter = 0;
