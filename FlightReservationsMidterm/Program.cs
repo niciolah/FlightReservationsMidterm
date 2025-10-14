@@ -18,7 +18,7 @@ namespace FlightReservationsMidterm
             WriteLine("Please enter your address so we can select the nearest airport to you: ");
             string userAddress = ReadLine();
 
-            WriteLine($"\nThank you, {userName}. Please enter your date of travel");
+            WriteLine($"\nThank you, {userName}. Please enter your date of travel in mm/dd/yyyy format");
             string travelDate = ReadLine();
 
             WriteLine($"Thank you for entering your travel information, {userName}.");
@@ -36,27 +36,30 @@ namespace FlightReservationsMidterm
             double salesTax = (bagPrice * seatPrice) * 0.05;
 
             double totalPrice = seatPrice + bagPrice + salesTax;
+           
+            ForegroundColor = ConsoleColor.Yellow;
+            BackgroundColor = ConsoleColor.DarkRed;
 
-            WriteLine("\n|===================================================================================|");
-            WriteLine("|\t\t\tREYNOLDS AIRLINES\t\t\t\t\t\t|");
-            WriteLine("|\t\t\t FLIGHT ITINERARY\t\t\t\t\t\t|");
-            WriteLine("|\t\t\t ITEMIZED RECEIPT\t\t\t\t\t\t|");
-            WriteLine("===================================================================================");
-            WriteLine($"|Passenger Name:\t\t{userName}\t\t\t\t\t|");
-            WriteLine($"|Passenger Address:\t\t{userAddress}\t\t\t\t\t|");
-            WriteLine($"|Date of Travel:\t\t{travelDate}\t\t\t\t\t|");
-            WriteLine("|-----------------------------------------------------------------------------------|");
-            WriteLine($"|Number of Seats Booked:\t{seatCount}|");
-            WriteLine($"|Number of Bags Checked:\t{bagCount}|");
-            WriteLine($"|Total Seat Price:\t\t{seatPrice.ToString("C")}|");
-            WriteLine($"|Total Bag Price:\t\t{bagPrice.ToString("C")}|");
-            WriteLine($"|Sales Tax (5%):\t\t{(salesTax).ToString("C")}|");
-            WriteLine("|-----------------------------------------------------------------------------------|");
-            WriteLine($"|\t\t\t  TOTAL AMOUNT DUE: {totalPrice.ToString("C")}\t\t\t\t\t|");
-            WriteLine("|===================================================================================|");
-            WriteLine("|\t\tThank you for flying Reynolds Airlines!\t\t\t\t\t|");
-            WriteLine("|-----------------------------------------------------------------------------------|");
-
+            WriteLine("\n|===================================================================================");
+            WriteLine("|\t\t\tREYNOLDS AIRLINES");
+            WriteLine("|\t\t\t FLIGHT ITINERARY");
+            WriteLine("|\t\t\t ITEMIZED RECEIPT");
+            WriteLine("|===================================================================================");
+            WriteLine($"|Passenger Name:\t\t{userName}");
+            WriteLine($"|Passenger Address:\t\t{userAddress}");
+            WriteLine($"|Date of Travel:\t\t{travelDate}");
+            WriteLine("|-----------------------------------------------------------------------------------");
+            WriteLine($"|Number of Seats Booked:\t{seatCount}");
+            WriteLine($"|Number of Bags Checked:\t{bagCount}");
+            WriteLine($"|Total Seat Price:\t\t{seatPrice.ToString("C")}");
+            WriteLine($"|Total Bag Price:\t\t{bagPrice.ToString("C")}");
+            WriteLine($"|Sales Tax (5%):\t\t{(salesTax).ToString("C")}");
+            WriteLine("|-----------------------------------------------------------------------------------");
+            WriteLine($"|\t\t\t  TOTAL AMOUNT DUE: {totalPrice.ToString("C")}\t\t\t\t\t");
+            WriteLine("|===================================================================================");
+            WriteLine("|\t\tThank you for flying Reynolds Airlines!\t\t\t\t\t");
+            WriteLine("|-----------------------------------------------------------------------------------");
+            Console.ResetColor();
 
 
 
