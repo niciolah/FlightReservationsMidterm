@@ -55,9 +55,9 @@ namespace FlightReservationsMidterm
             WriteLine($"|Total Bag Price:\t\t{bagPrice.ToString("C")}");
             WriteLine($"|Sales Tax (5%):\t\t{(salesTax).ToString("C")}");
             WriteLine("|-----------------------------------------------------------------------------------");
-            WriteLine($"|\t\t\t  TOTAL AMOUNT DUE: {totalPrice.ToString("C")}\t\t\t\t\t");
+            WriteLine($"|\t\t\t  TOTAL AMOUNT DUE: {totalPrice.ToString("C")}");
             WriteLine("|===================================================================================");
-            WriteLine("|\t\tThank you for flying Reynolds Airlines!\t\t\t\t\t");
+            WriteLine("|\t\tThank you for flying Reynolds Airlines!");
             WriteLine("|-----------------------------------------------------------------------------------");
             Console.ResetColor();
 
