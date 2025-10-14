@@ -45,8 +45,8 @@ namespace FlightReservationsMidterm
             WriteLine($"Passenger Name: {userName}");
             WriteLine($"Passenger Address: {userAddress}");
             WriteLine($"Date of Travel: {travelDate}");
-            WriteLine($"Number of Seats Booked: {seatCount} \t\t\tTotal Seat Price: ${seatPrice}");
-            WriteLine($"Number of Bags Checked: {bagCount} \t\t\tTotal Bag Price: ${bagPrice}");
+            WriteLine($"Number of Seats Booked: {seatCount} \t\t\tTotal Seat Price: {seatPrice.ToString("C")}");
+            WriteLine($"Number of Bags Checked: {bagCount} \t\t\tTotal Bag Price: {bagPrice.ToString("C")}");
             WriteLine("-----------------------------------------------------------------------------------");
             WriteLine($"\t\t\t  TOTAL AMOUNT DUE: ${seatPrice + bagPrice}");
             WriteLine("===================================================================================");
