@@ -25,7 +25,7 @@ namespace FlightReservationsMidterm
             WriteLine("Please enter the number of seats you would like to book: ");
             int seatCount = int.Parse(ReadLine());
 
-            WriteLine($"Thank you for selecting to book {seatCount} seats.");
+            WriteLine($"You have selected to book {seatCount} seats.");
             WriteLine("Please enter the total number of bags you will be checking: \n(enter 0 if you will not be checking any bags)");
             int bagCount = int.Parse(ReadLine());
 
