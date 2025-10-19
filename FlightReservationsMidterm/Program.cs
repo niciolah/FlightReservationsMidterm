@@ -28,7 +28,7 @@ namespace FlightReservationsMidterm
             //Prompt and Accept User's Date of Travel
             WriteLine("Please enter your date of travel in mm/dd/yyyy format");
             string travelDate = ReadLine();
-            WriteLine("Thank you for entering your booking identification information.");
+            WriteLine("\nThank you for entering your booking identification information.");
 
             //Ask User How Many Seats They want to Book, Calculate Seat Price
             WriteLine("Please enter the number of seats you would like to book: ");
@@ -40,8 +40,13 @@ namespace FlightReservationsMidterm
             int bagCount = int.Parse(ReadLine());
             double bagPrice = bagDataCalculator(bagCount);
 
+            //Infomr User
+            WriteLine("\nThank you for providing your booking information. Generating your itemized receipt...");
+            WriteLine("Press any key to view your receipt");
+            ReadKey();
+
             //Calculate Sales Tax and Total Price
-            double salesTax = (bagPrice * seatPrice) * 0.05;
+            double salesTax = (bagPrice + seatPrice) * 0.05;
             double totalPrice = seatPrice + bagPrice + salesTax;
 
             //Change Colors and Display Receipt
